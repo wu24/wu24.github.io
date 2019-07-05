@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta name="author" content="wu24">
+  
+  
+  <title>Anaconda的安装与使用 | wu24</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="python,Anaconda,">
+  
+
+  
+  <meta name="description" content="wu24的小站">
+
+  
+
+  
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js" async></script>
+  
+
+  
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+  
+
+  
+    <script src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+  
+
+  
+
+  <script>
+  // theme-ad's config script
+  // it can be used in every script
+  
+  window.AD_CONFIG = {
+    leancloud: {"appid":"sw527FocaHIFJVk21ntEXcaI-gzGzoHsz","appkey":"fij0WHTBbI4fnbhpoJBjLQtO","comment":true,"count":true},
+    welcome: {"enable":false,"interval":30},
+    start_time: "2019-06-14",
+    passwords: ["efe07af7441da2b69c4a41e42e73be4db47f66010a56900788a458354a7373ec", ],
+    is_post: true,
+    lock: false,
+    author: "wu24",
+    share: {"twitter":false,"facebook":false,"weibo":false,"qq":false,"wechat":false},
+    mathjax: true,
+    page_type: "",
+    root: "/"
+  };
+</script>
+
+  <script src="/vendor/sha256.min.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/index.js"></script>
+<script src="/vendor/qrcode.min.js"></script>
+
+  
+    <link rel="icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/images/touch-icon.png">
+  
+
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/styles/components/highlight/highlight.css">
+
+  
+</head>
+  <body>
+    <header class="site-header">
+  <div class="site-header-brand">
+    
+      <span class="site-header-brand-title">
+        <a href="/">wu24</a>
+      </span>
+    
+    
+      <span class="site-header-brand-motto"> | 一直很安静</span>
+    
+  </div>
+  <div class="site-header-right">
+    <nav class="site-header-navigation">
+      
+        <a href="/" target="_self">首页</a>
+      
+        <a href="/archives/" target="_self">归档</a>
+      
+        <a href="/tags/" target="_self">标签</a>
+      
+        <a href="/categories/" target="_self">分类</a>
+      
+        <a href="/about/" target="_self">关于</a>
+      
+    </nav>
+    <div class="site-header-btn">
+      
+        <a href="https://github.com/dongyuanxin/" target="_blank" id="site-github">
+          <i class="fa fa-github-alt"></i>
+        </a>
+      
+      <a href="javascript:void(0);" id="site-search">
+        <i class="fa fa-search"></i>
+      </a>
+      <a href="javascript:void(0);" id="site-nav-btn">
+        <i class="fa fa-ellipsis-v"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<nav class="table-content" id="site-nav">
+  <div class="table-content-title">
+    <span>导航</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc">
+      
+        <li class="toc-item">
+          <a href="/" target="_self">
+            首页
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/archives/" target="_self">
+            归档
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/tags/" target="_self">
+            标签
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/categories/" target="_self">
+            分类
+          </a>
+        </li>
+      
+        <li class="toc-item">
+          <a href="/about/" target="_self">
+            关于
+          </a>
+        </li>
+      
+    </ol>
+  </div>
+</nav>
+<div id="site-process"></div>
+    <main>
+      
+  <div class="passage">
+  <div class="passage-meta">
+    <span>
+      <i class="fa fa-calendar"></i>2019-07-01
+    </span>
+    
+      <span>
+        | <a href="/categories/python/"><i class="fa fa-bookmark"></i>python</a>
+      </span>
+    
+    
+      <span>
+        | <i class="fa fa-unlock-alt"></i>UNLOCK
+      </span>
+    
+  </div>
+  <h1 class="passage-title">
+    Anaconda的安装与使用
+  </h1>
+  
+  <article class="passage-article">
+    <h3 id="一-安装Anaconda"><a href="#一-安装Anaconda" class="headerlink" title="一.安装Anaconda"></a>一.安装Anaconda</h3><h5 id="安装完成之后的主要应用程序："><a href="#安装完成之后的主要应用程序：" class="headerlink" title="安装完成之后的主要应用程序："></a>安装完成之后的主要应用程序：</h5><ul>
+<li>Anaconda Navigator：用于管理环境和包的GUI</li>
+<li>Anaconda Prompt 终端：管理环境和包的命令行工具</li>
+<li>Spyder：面向科学开发的 IDE</li>
+</ul>
+<h3 id="二-Anaconda常用命令"><a href="#二-Anaconda常用命令" class="headerlink" title="二.Anaconda常用命令"></a>二.Anaconda常用命令</h3><h5 id="1-创建环境"><a href="#1-创建环境" class="headerlink" title="1.创建环境"></a>1.创建环境</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env python=<span class="number">3.6</span>  <span class="comment">#python版本为3.6，名字为env的虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="2-进入环境"><a href="#2-进入环境" class="headerlink" title="2.进入环境"></a>2.进入环境</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source activate env   <span class="comment">#在MacOS/Linux上进入名为env的虚拟环境</span></span><br><span class="line">activate env          <span class="comment">#在windows上进入名为env的虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-退出环境"><a href="#3-退出环境" class="headerlink" title="3.退出环境"></a>3.退出环境</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source deactivate    <span class="comment">#在MacOS/Linux上退出当前虚拟环境</span></span><br><span class="line">deactivate           <span class="comment">#在windows上退出当前虚拟环境</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-查看conda版本"><a href="#4-查看conda版本" class="headerlink" title="4.查看conda版本"></a>4.查看conda版本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda --version</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-升级conda版本"><a href="#5-升级conda版本" class="headerlink" title="5.升级conda版本"></a>5.升级conda版本</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-列出所有环境"><a href="#6-列出所有环境" class="headerlink" title="6. 列出所有环境"></a>6. 列出所有环境</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-删除环境"><a href="#7-删除环境" class="headerlink" title="7.删除环境"></a>7.删除环境</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda env remove --name env <span class="comment">#删除名为env的环境</span></span><br><span class="line">conda env remove -n env <span class="comment">#删除名为env的环境</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="4-安装包"><a href="#4-安装包" class="headerlink" title="4.安装包"></a>4.安装包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install numpy</span><br><span class="line">conda install numpy=<span class="number">1.10</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="5-删除包"><a href="#5-删除包" class="headerlink" title="5.删除包"></a>5.删除包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove numpy</span><br></pre></td></tr></table></figure>
+
+<h5 id="列出安装的包"><a href="#列出安装的包" class="headerlink" title="列出安装的包"></a>列出安装的包</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure>
+  </article>
+  <aside class="table-content" id="site-toc">
+  <div class="table-content-title">
+    <i class="fa fa-arrow-right fa-lg" id="site-toc-hide-btn"></i>
+    <span>目录</span>
+  </div>
+  <div class="table-content-main">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-安装Anaconda"><span class="toc-text">一.安装Anaconda</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装完成之后的主要应用程序："><span class="toc-text">安装完成之后的主要应用程序：</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#二-Anaconda常用命令"><span class="toc-text">二.Anaconda常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-创建环境"><span class="toc-text">1.创建环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-进入环境"><span class="toc-text">2.进入环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-退出环境"><span class="toc-text">3.退出环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-查看conda版本"><span class="toc-text">4.查看conda版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-升级conda版本"><span class="toc-text">5.升级conda版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-列出所有环境"><span class="toc-text">6. 列出所有环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-删除环境"><span class="toc-text">7.删除环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-安装包"><span class="toc-text">4.安装包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-删除包"><span class="toc-text">5.删除包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列出安装的包"><span class="toc-text">列出安装的包</span></a></li></ol></li>
+  </div>
+</aside>
+  
+    <aside class="passage-copyright">
+      <div>本文作者: wu24</div>
+      
+        <div>
+          原文链接: 
+          <a href target="_blank">https://wu24.github.io/passages/2019-7-1-Anaconda安装与常用命令/</a>
+        </div>
+      
+      <div>
+        版权声明: 本博客所有文章除特别声明外, 均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议. 转载请注明出处!
+      </div>
+    </aside>
+  
+  
+    <div class="passage-tags">
+     
+      <a href="/tags/Anaconda/"><i class="fa fa-tags"></i>Anaconda</a>
+    
+    </div>
+  
+</div>
+
+    </main>
+    
+      
+<div class="site-comment-contanier" data-plateform="leancloud">
+  
+    <p id="site-comment-info">
+      <i class="fa fa-spinner fa-spin"></i> 评论加载中
+    </p>
+    <div id="site-comment"></div>
+  
+</div>
+    
+    <div class="site-footer-wrapper">
+  <footer class="site-footer">
+    
+    <div class="site-footer-info">
+      <i class="fa fa-clock-o"></i> 本站已稳定运行<span id="site-time"></span>
+    </div>
+    
+      <div class="site-footer-info">
+        <i class="fa fa-paw"></i> 您是本站第 <span id="site-count"></span> 位访客
+      </div>
+    
+    
+      <div class="site-footer-info">
+        <i class="fa fa-at"></i> Email: 204651470@qq.com
+      </div>
+    
+    <div class="site-footer-info">
+      <i class="fa fa-copyright"></i> 
+      2019 <a href="https://github.com/dongyuanxin/theme-ad/" target="_blank">Theme-AD</a>.
+      Created by <a href="https://godbmw.com/" target="_blank">GodBMW</a>.
+      All rights reserved.
+    </div>
+  </footer>
+</div>
+    <div id="site-layer" style="display:none;">
+  <div class="site-layer-content">
+    <div class="site-layer-header">
+      <span class="site-layer-header-title" id="site-layer-title"></span>
+      <i class="fa fa-close" id="site-layer-close"></i>
+    </div>
+    <div class="site-layer-body" id="site-layer-container">
+      <div class="site-layer-input" id="site-layer-search" style="display: none;">
+        <div class="site-layer-input-choose">
+          <a href="javascript:void(0);" title="Change Search Engine">Google</a>
+        </div>
+        <input type="text">
+        <i class="fa fa-search"></i>
+      </div>
+      
+      <div id="site-layer-welcome" style="display:none;"></div>
+    </div>
+  </div>
+</div>
+    
+
+<div class="bottom-bar">
+  <div class="bottom-bar-left">
+    <a href="javascript:void(0);" data-enable="false">
+      <i class="fa fa-arrow-left"></i>
+    </a>
+    <a href="/passages/2019-6-28-map妙用/" data-enable="true">
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="bottom-bar-right">
+    <a href="javascript:void(0);" data-enable="true" id="site-toc-show-btn">
+      <i class="fa fa-bars"></i>
+    </a>
+    
+      <a href="#site-comment" data-enable="true">
+        <i class="fa fa-commenting"></i>
+      </a>
+    
+    <a href="javascript:void(0);" id="site-toggle-share-btn">
+      <i class="fa fa-share-alt"></i>
+    </a>
+    
+    <a href="javascript:void(0);" id="back-top-btn">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+</div>
+    <div id="share-btn">
+  
+  
+  
+  
+  
+</div>
+    
+  <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+  <script async>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '');
+  </script>
+
+
+
+  <script async>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+
+
+
+  <script async>
+    (function(){
+    var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?":"https://jspassport.ssl.qhimg.com/11.0.1.js?";
+    document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+  </script>
+
+
+    
+  </body>
+</html>
